@@ -1,6 +1,14 @@
+a {
+  text-decoration: none;
+}
+p {
+  font-family: Roboto, Helvetica, Arial;
+  font-size: 14px;
+  color: #9aa2a5;
+}
 .weather-card {
   margin-top: 60px;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   width: 700px;
   font-family: Roboto, Helvetica, Arial;
   color: #155263;
@@ -84,4 +92,7 @@
 .forecast-icon {
   display: block;
   font-size: 28px;
+}
+.footer {
+  width: 700px;
 }
