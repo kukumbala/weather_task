@@ -1,0 +1,87 @@
+.weather-card {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 700px;
+  font-family: Roboto, Helvetica, Arial;
+  color: #155263;
+  background-color: rgba(254, 254, 213, 0.5);
+}
+.btn-search {
+  background-color: #155263;
+  font-weight: 400;
+}
+.btn-search:hover {
+  background-color: #438494;
+}
+.btn-search:focus {
+  background-color: #438494;
+}
+.placeholder-background {
+  background-color: rgba(254, 254, 213, 0.4);
+}
+.placeholder-background:focus {
+  background-color: rgba(254, 254, 213, 0.4);
+  border-color: #155263;
+}
+.main-part {
+  padding: 15px;
+}
+.current-weather {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.current-temperature {
+  font-weight: 700;
+  font-size: 34px;
+}
+.form-control:focus,
+.btn:focus {
+  box-shadow: none;
+}
+.pin-button {
+  padding-left: 0;
+}
+.city {
+  font-size: 30px;
+}
+.date {
+  font-size: 16px;
+}
+
+.current-emoji {
+  font-size: 76px;
+  position: relative;
+  left: -30px;
+}
+.fahrenheit {
+  font-size: 14px;
+  position: relative;
+  bottom: 15px;
+}
+.fahrenheit:hover {
+  color: #ff822d;
+  cursor: pointer;
+}
+.forecast {
+  background-color: #fefed5;
+  border-radius: 7px;
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+}
+.night-temperature {
+  display: block;
+  color: #9aa2a5;
+  font-size: 14px;
+}
+.day-temperature {
+  color: #155263;
+  font-size: 14px;
+}
+.forecast-icon {
+  display: block;
+  font-size: 28px;
+}

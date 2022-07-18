@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta aname="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card weather-card">
+        <div class="card-body">
+          <div class="main-part">
+            <div class="row">
+              <div class="col-5">
+                <h1 class="city">Zaporizhzhia</h1>
+              </div>
+              <div class="col">
+                <form>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control placeholder-background"
+                      placeholder="Choose your city"
+                      id="city"
+                    />
+                    <button
+                      class="btn btn-primary btn-search"
+                      type="button"
+                      id="button"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-1 pin-button">
+                <button class="btn btn-primary btn-search" id="pin">📍</button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-3">
+                <br />
+                <h2 class="current-temperature">
+                  <span id="temperature">28</span>°<span
+                    class="celsius"
+                    id="celsius"
+                    >C</span
+                  >
+                  <span class="fahrenheit" id="fahrenheit">F</span>
+                </h2>
+                <span class="date">
+                  <span id="date">Tuesday, 05.07</span><br />
+                  <span id="time">17:08</span>
+                </span>
+              </div>
+              <div class="col-2 current-emoji">☀️</div>
+              <div class="col-3">
+                <br />
+                <span class="current-weather"
+                  >Pressure <span id="pressure">1004</span>hPa</span
+                >
+                <span class="current-weather"
+                  >Humidity <span id="humidity">67</span>%</span
+                >
+                <span class="current-weather"
+                  >Wind <span id="wind">1</span>m/s</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <hr />
+          <div class="row forecast">
+            <div class="col">
+              <strong>Tue</strong>
+              <span class="forecast-icon">☀️</span>
+              <span class="day-temperature">+28°C</span>
+              <span class="night-temperature">+22°C</span>
+            </div>
+
+            <div class="col">
+              <strong>Wed</strong>
+              <span class="forecast-icon">☀️</span>
+              <span class="day-temperature">+29°C</span>
+              <span class="night-temperature">+23°C</span>
+            </div>
+            <div class="col">
+              <strong>Thu</strong>
+              <span class="forecast-icon">☀️</span>
+              <span class="day-temperature">+32°C</span>
+              <span class="night-temperature">+25°C</span>
+            </div>
+            <div class="col">
+              <strong>Fri</strong>
+              <span class="forecast-icon">🌤️</span>
+              <span class="day-temperature">+32°C</span>
+              <span class="night-temperature">+26°C</span>
+            </div>
+            <div class="col">
+              <strong>Sat</strong>
+              <span class="forecast-icon">🌦️</span>
+              <span class="day-temperature">+22°C</span>
+              <span class="night-temperature">+18°C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
