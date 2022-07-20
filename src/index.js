@@ -53,6 +53,9 @@ function currentWeather(response) {
   currentWind.innerHTML = Math.round(response.data.wind.speed);
   let currentPressure = document.querySelector("#pressure");
   currentPressure.innerHTML = response.data.main.pressure;
+  let currentDescription = document.querySelector("#description");
+  currentDescription.innerHTML = response.data.weather[0].description;
+
   document.querySelector(".placeholder-background").value = ``;
 }
 function searchCity() {
