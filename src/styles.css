@@ -21,24 +21,24 @@ li::first-letter {
   margin-bottom: 10px;
   width: 700px;
   font-family: Roboto, Helvetica, Arial;
-  color: #155263;
-  background-color: rgba(149, 245, 159, 0.2);
+  color: #2b4353;
+  background-color: #9cd3d3;
 }
 .btn-search {
-  background-color: #155263;
+  background-color: #2b4353;
   font-weight: 400;
+  color: #c3ced2;
 }
-.btn-search:hover {
-  background-color: #438494;
-}
+.btn-search:hover,
 .btn-search:focus {
-  background-color: #438494;
+  background-color: rgba(43, 67, 83, 0.8);
+  color: #c3ced2;
 }
 .placeholder-background {
-  background-color: rgba(254, 254, 213, 0.4);
+  background-color: rgba(254, 254, 213, 0.6);
 }
 .placeholder-background:focus {
-  background-color: rgba(254, 254, 213, 0.4);
+  background-color: rgba(254, 254, 213, 0.6);
   border-color: #155263;
 }
 .main-part {
@@ -77,7 +77,7 @@ li::first-letter {
   cursor: pointer;
 }
 .forecast {
-  background-color: #fefed5;
+  background-color: rgba(254, 254, 213, 0.6);
   border-radius: 7px;
   text-align: center;
   padding: 15px;
@@ -85,7 +85,7 @@ li::first-letter {
 }
 .night-temperature {
   display: block;
-  color: #9aa2a5;
+  color: #a1a7a9;
   font-size: 14px;
 }
 .day-temperature {
