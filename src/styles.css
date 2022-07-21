@@ -23,15 +23,17 @@ li::first-letter {
   font-family: Roboto, Helvetica, Arial;
   color: #2b4353;
   background-color: #9cd3d3;
+  box-shadow: 3px 3px 3px rgba(43, 67, 83, 0.4);
 }
 .btn-search {
   background-color: #2b4353;
+  box-shadow: 2px 2px 2px rgba(43, 67, 83, 0.3);
   font-weight: 400;
   color: #c3ced2;
 }
 .btn-search:hover,
 .btn-search:focus {
-  background-color: rgba(43, 67, 83, 0.8);
+  background-color: rgba(43, 67, 83, 0.9);
   color: #c3ced2;
 }
 .placeholder-background {
@@ -82,6 +84,7 @@ li::first-letter {
   text-align: center;
   padding: 15px;
   margin: 0 auto;
+  box-shadow: 2px 2px 2px rgba(43, 67, 83, 0.3);
 }
 .night-temperature {
   display: block;
