@@ -55,15 +55,27 @@ function currentWeather(response) {
   currentPressure.innerHTML = response.data.main.pressure;
   let currentDescription = document.querySelector("#description");
   currentDescription.innerHTML = response.data.weather[0].description;
-
+  let currentIcon = document.querySelector("#icon");
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   document.querySelector(".placeholder-background").value = ``;
 }
-function searchCity() {
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&appid=${apiKey}`;
+
+function searchCity(city) {
+  //let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&appid=${apiKey}`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(currentWeather);
 }
+searchCity("Lviv");
+function cityListener(event) {
+  event.preventDefault();
+  let myCity = document.querySelector("#city");
+  searchCity(myCity.value);
+}
 let button = document.querySelector("#button");
-button.addEventListener("click", searchCity);
+button.addEventListener("click", cityListener);
 
 //get current location and weather
 function detectCity(position) {
@@ -72,6 +84,7 @@ function detectCity(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longtitude}&units=metric&appid=${apiKey}`;
   axios.get(url).then(currentWeather);
 }
+
 function getLocalWeather() {
   navigator.geolocation.getCurrentPosition(detectCity);
 }
