@@ -60,20 +60,23 @@ function currentWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  currentIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   document.querySelector(".placeholder-background").value = ``;
 }
 
 function searchCity(city) {
-  //let url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=metric&appid=${apiKey}`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(currentWeather);
 }
+
 searchCity("Lviv");
+
 function cityListener(event) {
   event.preventDefault();
   let myCity = document.querySelector("#city");
   searchCity(myCity.value);
 }
+
 let button = document.querySelector("#button");
 button.addEventListener("click", cityListener);
 
