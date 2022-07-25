@@ -25,7 +25,8 @@ let months = [
   "December",
 ];
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -50,6 +51,13 @@ function showForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+function getForecast(coordinates) {
+  let apiKey = "dbfe710d4217359672738bda52809ad7";
+  let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(showForecast);
+}
+
 let date = now.getDate();
 let month = now.getMonth();
 let minutes = now.getMinutes();
@@ -88,6 +96,7 @@ function currentWeather(response) {
   );
   currentIcon.setAttribute("alt", `${response.data.weather[0].description}`);
   document.querySelector(".placeholder-background").value = ``;
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -96,7 +105,6 @@ function searchCity(city) {
 }
 
 searchCity("Lviv");
-showForecast();
 
 function cityListener(event) {
   event.preventDefault();
