@@ -24,6 +24,32 @@ let months = [
   "November",
   "December",
 ];
+
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col">
+                <strong>${day}</strong>
+                <div class="forecast-icon">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png" width="80"
+                    alt="${day} weather"
+                  />
+                </div>
+                <div class="max-temperature">+28°C</div>
+                <div class="min-temperature">+22°C</div>
+              </div> 
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 let date = now.getDate();
 let month = now.getMonth();
 let minutes = now.getMinutes();
@@ -70,6 +96,7 @@ function searchCity(city) {
 }
 
 searchCity("Lviv");
+showForecast();
 
 function cityListener(event) {
   event.preventDefault();

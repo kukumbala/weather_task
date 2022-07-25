@@ -86,19 +86,22 @@ li::first-letter {
   margin: 0 auto;
   box-shadow: 2px 2px 2px rgba(43, 67, 83, 0.3);
 }
-.night-temperature {
-  display: block;
-  color: #a1a7a9;
-  font-size: 14px;
+
+.forecast-icon,
+.min-temperature,
+.max-temperature {
+  position: relative;
+  top: -10px;
 }
-.day-temperature {
+.min-temperature {
+  color: #a1a7a9;
+  font-size: 13px;
+}
+.max-temperature {
   color: #155263;
   font-size: 14px;
 }
-.forecast-icon {
-  display: block;
-  font-size: 28px;
-}
+
 .footer {
   width: 700px;
 }
