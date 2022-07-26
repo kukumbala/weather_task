@@ -25,33 +25,47 @@ let months = [
   "December",
 ];
 
+function formateForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="col">
-                <strong>${day}</strong>
+                <strong>${formateForecastDay(forecastDay.dt)}</strong>
                 <div class="forecast-icon">
                   <img
-                    src="http://openweathermap.org/img/wn/04d@2x.png" width="80"
-                    alt="${day} weather"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" width="80"
+                    alt="${formateForecastDay(forecastDay.dt)} weather"
                   />
                 </div>
-                <div class="max-temperature">+28°C</div>
-                <div class="min-temperature">+22°C</div>
+                <div class="max-temperature">${Math.round(
+                  forecastDay.temp.max
+                )}°C</div>
+                <div class="min-temperature">${Math.round(
+                  forecastDay.temp.min
+                )}°C</div>
               </div> 
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 function getForecast(coordinates) {
   let apiKey = "dbfe710d4217359672738bda52809ad7";
   let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
