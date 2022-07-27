@@ -142,25 +142,3 @@ function getLocalWeather() {
 }
 let pinButton = document.querySelector("#pin");
 pinButton.addEventListener("click", getLocalWeather);
-
-//switch fahrenheit-celsius
-function change(event) {
-  event.preventDefault();
-  let currentDegree = document.querySelector("span.celsius");
-  let degree = document.querySelector("span.fahrenheit");
-  let a = currentDegree.textContent;
-  let temperature = document.querySelector("#temperature");
-  let temp = temperature.textContent;
-  temp = parseInt(temp);
-  if (a === "C") {
-    currentDegree.innerHTML = "F";
-    degree.innerHTML = "C";
-    temperature.innerHTML = Math.round(temp * 1.8 + 32);
-  } else {
-    currentDegree.innerHTML = "C";
-    degree.innerHTML = "F";
-    temperature.innerHTML = Math.round(((temp - 32) * 5) / 9);
-  }
-}
-let input = document.querySelector("#fahrenheit");
-input.addEventListener("click", change);

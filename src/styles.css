@@ -69,15 +69,6 @@ li::first-letter {
 .date {
   font-size: 16px;
 }
-.fahrenheit {
-  font-size: 14px;
-  position: relative;
-  bottom: 15px;
-}
-.fahrenheit:hover {
-  color: #ff822d;
-  cursor: pointer;
-}
 .forecast {
   background-color: rgba(254, 254, 213, 0.6);
   border-radius: 7px;
